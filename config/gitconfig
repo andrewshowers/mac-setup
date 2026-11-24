@@ -1,0 +1,10 @@
+[user]
+	name = Andrew Showers
+	email = 113995898+andrewshowers@users.noreply.github.com
+[init]
+	defaultBranch = main
+[pull]
+	rebase = true
+[credential "https://github.com"]
+	helper =
+	helper = !/opt/homebrew/bin/gh auth git-credential

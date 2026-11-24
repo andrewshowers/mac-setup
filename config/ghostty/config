@@ -1,0 +1,14 @@
+# Ghostty config. Reload with Cmd+Shift+,
+# List every option with docs: ghostty +show-config --default --docs
+# Uncomment a line to use it. Ghostty doesn't allow comments at the end of a line.
+
+# font-family = JetBrains Mono
+# font-size = 14
+
+# List themes: ghostty +list-themes
+# theme = Catppuccin Mocha
+
+# Make Option act as Alt, which fzf's Alt-C needs
+# macos-option-as-alt = true
+
+# window-padding-x = 8

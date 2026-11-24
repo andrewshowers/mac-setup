@@ -6,31 +6,26 @@
 brew "git"
 brew "gh"
 brew "node"
-brew "pnpm"
-brew "mas"
-
-# --- SDKs and runtimes
-# Deliberately NOT brew "powershell": the formula pulls in its own .NET, which
-# shadows the SDK on PATH. Install PowerShell as a dotnet global tool instead.
-cask "dotnet-sdk"
-cask "microsoft-openjdk@21"
+brew "fzf"
+brew "zoxide"
 
 # --- Apps: now
-cask "visual-studio-code"
+cask "1password"
 cask "ghostty"
-cask "iterm2"
+cask "karabiner-elements"
+cask "visual-studio-code"
 cask "claude"
+cask "claude-code"
+cask "bambu-studio"
+cask "firefox"
 
 # --- Apps: later (uncomment, then re-run brew bundle)
 # cask "obsidian"
 # cask "vlc"
-# cask "rectangle"
-# brew "scrcpy"
-# brew "zoxide"
-# brew "fzf"
+# brew "pnpm"
+# brew "ripgrep"
+# brew "mas"
+# mas "Xcode", id: 497799835
 
 # --- VS Code extensions
 vscode "bierner.markdown-mermaid"
-vscode "mermaidchart.vscode-mermaid-chart"
-vscode "ms-vscode.powershell"
-vscode "zainchen.json"

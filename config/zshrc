@@ -1,0 +1,20 @@
+# Interactive shell config. Homebrew's PATH setup lives in ~/.zprofile, not here.
+
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=50000
+SAVEHIST=50000
+setopt EXTENDED_HISTORY      # save a timestamp with each command
+setopt SHARE_HISTORY         # share history across open terminals
+setopt HIST_IGNORE_ALL_DUPS  # drop older duplicates of a command
+setopt HIST_IGNORE_SPACE     # a leading space keeps a command out of history
+setopt HIST_REDUCE_BLANKS
+
+# fzf: Ctrl-R history search, Ctrl-T file picker, Alt-C cd into a directory
+source <(fzf --zsh)
+
+# Claude Code: allow auto-updates when it's installed by a package manager
+export CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE=1
+
+# zoxide: `z foo` jumps to a directory you use often (keep this last)
+eval "$(zoxide init zsh)"

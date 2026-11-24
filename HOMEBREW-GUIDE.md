@@ -21,30 +21,25 @@ An excerpt. The full file is `Brewfile` in this repo.
 # --- Command-line tools
 brew "git"
 brew "gh"
-brew "node"
-brew "pnpm"
-
-# --- SDKs and runtimes
-cask "dotnet-sdk"
-cask "microsoft-openjdk@21"
+brew "fzf"
 
 # --- Apps: now
-cask "visual-studio-code"
 cask "ghostty"
+cask "visual-studio-code"
 
 # --- Apps: later (uncomment, then re-run brew bundle)
 # cask "obsidian"
-# cask "rectangle"
-# brew "fzf"
+# brew "ripgrep"
+# mas "Xcode", id: 497799835
 
 # --- VS Code extensions
-vscode "ms-vscode.powershell"
 vscode "bierner.markdown-mermaid"
 ```
 
 - `brew` lines are command-line tools.
 - `cask` lines are GUI apps and larger installers.
 - `vscode` lines are VS Code extensions. They need `code` on your PATH, which the VS Code cask provides.
+- `mas` lines are Mac App Store apps. They need `brew "mas"` and you must be signed in to the App Store.
 - `tap` lines add third-party repositories. Taps can require trusting the formula once per Mac (`brew trust`).
 
 ## Conventions
@@ -52,10 +47,9 @@ vscode "bierner.markdown-mermaid"
 - **One line per item, grouped by purpose, with section headers.** Put comments on their own lines, not trailing, so the file stays easy to parse.
 - **Keep a "later" section of commented-out entries.** Uncomment an entry and re-run `brew bundle` to install it.
 - **Explain what you deliberately don't install with Homebrew.** Add a comment saying why and what you do instead. Examples:
-  - `powershell`: the formula drags in a second .NET, so install it as a .NET global tool.
   - `android-platform-tools`: a second `adb` conflicts with the one in the Android SDK.
   - Any cask that ships a newer major version than your team supports: install the supported one by hand.
-- **Pin a version only when you need to.** Use versioned formulas or casks such as `microsoft-openjdk@21`.
+- **Pin a version only when you need to.** Use versioned formulas or casks such as `node@22`.
 - **Edit the Brewfile first, then apply it,** so the file stays the source of truth.
 
 ## Everyday workflow
@@ -68,7 +62,7 @@ brew bundle cleanup --file Brewfile      # list installed items not in the Brewf
 
 ## What Homebrew doesn't cover
 
-Use Homebrew for installs and a script for configuration: shell environment variables, SDK installs, CLI logins, and cloning repos. Write the script so each step is idempotent, safe to re-run, and backs up any file it overwrites. Named steps and a dry-run mode make it easier to trust.
+Use Homebrew for installs and a script for configuration. In this repo, `setup.sh` symlinks the dotfiles in `config/` into place and `macos.sh` applies system settings. Keep both safe to re-run.
 
 Keep secrets out of the repo. Put them in a git-ignored, permission-600 env file that your shell loads.
 
