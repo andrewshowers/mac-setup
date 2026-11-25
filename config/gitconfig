@@ -1,6 +1,13 @@
 [user]
 	name = Andrew Showers
 	email = 113995898+andrewshowers@users.noreply.github.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEquTT1WrlmLgWvUFZL16dhLjLpLnHl16vFzRwzLPOdb
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+	gpgsign = true
 [init]
 	defaultBranch = main
 [pull]

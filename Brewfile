@@ -11,6 +11,7 @@ brew "zoxide"
 
 # --- Apps: now
 cask "1password"
+cask "1password-cli"
 cask "ghostty"
 cask "karabiner-elements"
 cask "visual-studio-code"

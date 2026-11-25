@@ -22,6 +22,7 @@ link zshrc     ~/.zshrc
 link gitconfig ~/.gitconfig
 link ghostty   ~/.config/ghostty
 link karabiner ~/.config/karabiner
+link 1password-agent.toml ~/.config/1Password/ssh/agent.toml
 
 brew bundle --file Brewfile
 
