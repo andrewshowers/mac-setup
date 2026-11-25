@@ -17,5 +17,7 @@ mkdir -p ~/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 # Auto-hide the Dock
 defaults write com.apple.dock autohide -bool true
+# Touch ID for sudo
+[[ -f /etc/pam.d/sudo_local ]] || sed 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local >/dev/null
 
 killall Finder Dock SystemUIServer

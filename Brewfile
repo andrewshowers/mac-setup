@@ -21,6 +21,7 @@ cask "bambu-studio"
 cask "firefox"
 cask "spotify"
 cask "stats"
+cask "tailscale-app"
 
 # --- Apps: later (uncomment, then re-run brew bundle)
 # cask "obsidian"
