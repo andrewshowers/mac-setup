@@ -18,6 +18,8 @@ cask "claude"
 cask "claude-code"
 cask "bambu-studio"
 cask "firefox"
+cask "spotify"
+cask "stats"
 
 # --- Apps: later (uncomment, then re-run brew bundle)
 # cask "obsidian"
