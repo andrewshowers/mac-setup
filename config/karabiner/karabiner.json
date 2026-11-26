@@ -2,6 +2,26 @@
     "global": { "show_in_menu_bar": false },
     "profiles": [
         {
+            "complex_modifications": {
+                "rules": [
+                    {
+                        "description": "Traditional scroll direction for mice (trackpad stays natural)",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "identifiers": [{ "is_pointing_device": true }],
+                                        "type": "device_if"
+                                    }
+                                ],
+                                "flip": ["vertical_wheel"],
+                                "type": "mouse_basic"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "ignore_pointing_device_events_by_default": false,
             "name": "Default profile",
             "selected": true,
             "virtual_hid_keyboard": { "keyboard_type_v2": "ansi" }

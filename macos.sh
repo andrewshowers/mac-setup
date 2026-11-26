@@ -17,7 +17,11 @@ mkdir -p ~/Pictures/Screenshots
 defaults write com.apple.screencapture location -string "$HOME/Pictures/Screenshots"
 # Auto-hide the Dock
 defaults write com.apple.dock autohide -bool true
+# Natural scrolling (trackpad); mice are flipped back by Karabiner
+defaults write -g com.apple.swipescrolldirection -bool true
 # Touch ID for sudo
 [[ -f /etc/pam.d/sudo_local ]] || sed 's/^#auth/auth/' /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local >/dev/null
+# Don't write .DS_Store files to network shares
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 killall Finder Dock SystemUIServer
